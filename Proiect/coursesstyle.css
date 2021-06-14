@@ -134,10 +134,20 @@ hr {
 }
 
 @media screen and (max-width:1200px) {
+    .details h2 {
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+    }
     .logo {
         float: none;
         width: 20%;
         text-align: center;
+        margin: auto;
+    }
+    .container {
+        width: 60%;
+        height: 75%;
         margin: auto;
     }
 }
