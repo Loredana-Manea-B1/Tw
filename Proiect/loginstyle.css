@@ -2,14 +2,15 @@
 
 header {
     position: relative;
-    height: 50hv;
+    padding: 5px 1px 20px 0px;
 }
 
 .login {
-    width: 700px;
-    margin: auto;
+    width: 350px;
+    margin-inline: auto;
+    margin-top: 50px;
     position: relative;
-    padding: 100px 2px;
+    padding: 50px 2px;
 }
 
 

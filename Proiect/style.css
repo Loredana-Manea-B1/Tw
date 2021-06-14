@@ -14,7 +14,7 @@ header {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(rgba(8, 98, 139, 0.74), rgba(72, 73, 133, 0.712)), url("beautiful-night-sky-with-shiny-stars.jpg");
+    background: linear-gradient(rgba(8, 98, 139, 0.747), rgba(8, 98, 139, 0.747)), url("beautiful-night-sky-with-shiny-stars.jpg");
     height: 100vh;
     -webkit-background-size: cover;
     background-size: cover;
@@ -99,7 +99,7 @@ body {
     }
     .logo {
         float: none;
-        width: 45%;
+        width: 35%;
         text-align: center;
         margin: auto;
     }
