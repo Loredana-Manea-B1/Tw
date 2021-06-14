@@ -22,8 +22,13 @@
 
 ////////////////////////////////
 [Pe front-end am facut ]
+
 [X]login;
 
 [X]main-page;
 
-[X]inceput de registre;
+[X]registre;
+
+[X]pagina de cursuri
+
+[X]inceput de pagin de about
