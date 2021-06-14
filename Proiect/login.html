@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+        </div>
+        <ul class="nav-area">
+            <li><a href="front_page.html">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Lessons</a></li>
+            <li><a href="#">Singin</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+
+</header>
+
+<body>
+    <div class="login">
+        <form action="action_page.php" method="post">
+            <div class="imgcontainer">
+                <img src="icon.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+
+
+
+
+</html>
