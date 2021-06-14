@@ -26,7 +26,7 @@ body {
 }
 
 .details h2 {
-    color: #243238;
+    color: #09cff1;
     font-size: 50px;
     margin: 0;
 }
@@ -104,7 +104,7 @@ hr {
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
-    background-color: #D50000;
+    background-color: #2725af;
     padding: 10px 25px;
     border-radius: 25px;
     margin-top: 25px;
