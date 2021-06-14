@@ -132,6 +132,10 @@ hr {
     background-color: #202979af;
 }
 
+.box-cyan {
+    background-color: #10eee3af;
+}
+
 @media screen and (max-width:1200px) {
     .logo {
         float: none;
