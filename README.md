@@ -14,7 +14,7 @@
 
 []//--- fiecare pagina are html si css ei ca sa fie mai usor de cautat prin cod ;
 
-[]//--- backul in facem in php si stocarea ar trebui sa folosi GraphQL;
+[]//--- backul in facem in php si stocarea ar trebui sa folosi Mysql;
 []//---
 
 
