@@ -1,20 +1,21 @@
 
 # Tw
-[]//--avem nevoie de o pagina de admin;
+[]//--avem nevoie de o pagina de admin; // adminul va fi singurul ce va vedea partea aia de upload
 
 []//--o pagina de profil ;
 
 []//=--si o pagina pentru upload tutorial;
 
-[]//-- desigur poate o bara de cautare sau sa ne gandim la un sistem de storage a tutorialelor;
-
 []//--- pentru back trebuie sa ne gandim cum tinem track ce tutoriale a urmat fiecare ;
+[]//--la cursuri in loc de cadegori o sa avem cursuri , si o sa avem vreo 6 , ma ocup sa le caut si sa vad cum fac pagina pentru fiecare , ca sa le accesezi , utilizatorul 
+va trebui sa fie logat
+
 
 []///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 []//--- fiecare pagina are html si css ei ca sa fie mai usor de cautat prin cod ;
 
-[]//--- backul in facem in php si stocarea ar trebui sa folosi GraphQL;
+[]//--- backul in facem in php si stocarea ar trebui sa folosi Mysql;
 []//---
 
 
