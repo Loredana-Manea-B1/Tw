@@ -1,3 +1,8 @@
+/* #243238
+ #404044
+ #D50000
+*/
+
 header {
     position: relative;
     padding: 2px 1px 50px 0px;
@@ -126,10 +131,6 @@ hr {
 
 .box-cyan {
     background-color: #10eee3af;
-}
-
-.box-purple {
-    background-color: #b279ccd7;
 }
 
 @media screen and (max-width:1200px) {
