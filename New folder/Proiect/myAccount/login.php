@@ -137,7 +137,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>    
             <div class="form-group">
             <label for="psw"><b>Password</b></label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" placeholder="Enter Password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
@@ -147,7 +147,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            
             <div class="container" style="background-color:#f1f1f100">
                 <button type="button" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="resetpass.php">password?</a></span>
                 <span class="psw">Do you wanna <a href="register.php">register?</a></span>
             </div>
 

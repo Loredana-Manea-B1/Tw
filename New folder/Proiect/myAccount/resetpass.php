@@ -2,11 +2,11 @@
 // Initialize the session
 session_start();
  
-// // Check if the user is logged in, otherwise redirect to login page
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-//     header("location: ../myAccount/login.php");
-//     exit;
-// }
+// Check if the user is logged in, otherwise redirect to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../myAccount/login.php");
+    exit;
+}
  
 // Include config file
 require_once "config.php";
@@ -93,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
        </div>
 
 
-<div class="login">
+<div class="resetpass">
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 

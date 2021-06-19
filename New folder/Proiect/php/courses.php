@@ -2,7 +2,16 @@
 session_start();
 include "../myAccount/database.php";
 $con = BD::get_con();
+//Check if the user is logged in, otherwise redirect to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location:../myAccount/login.php");
+    exit;
+}
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
