@@ -132,7 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="../html/service.html">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
 

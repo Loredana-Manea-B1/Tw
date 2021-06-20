@@ -1,14 +1,10 @@
 header {
     position: relative;
-    padding: 5px 1px 20px 0px;
+    padding: 0px 0px 20px 0px;
 }
 
 .about {
-    position: absolute;
-    width: 600px;
-    height: 100px;
-    margin: 5% 30%;
-    text-align: center;
+    margin-right: 15%;
 }
 
 .about h1 {
@@ -18,11 +14,8 @@ header {
     font-size: 30px;
 }
 
-.about h2 {
+.container h2 {
     text-align: center;
-    color: rgb(161, 218, 228);
-    text-transform: uppercase;
-    font-size: 15px;
 }
 
 .about h1 span {
@@ -31,13 +24,89 @@ header {
 
 .text {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     margin: 10% 30%;
     text-align: center;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.image {
+    margin-left: 10px;
+    margin-right: 5px;
+    padding: 30px 30px 0px;
+    text-align: center;
+}
+
+.column {
+    float: right;
+    width: 43%;
+    margin-bottom: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: rgb(253, 249, 249);
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(54, 46, 165);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
 @media screen and (max-width:1200px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
     .logo {
         float: none;
         width: 35%;

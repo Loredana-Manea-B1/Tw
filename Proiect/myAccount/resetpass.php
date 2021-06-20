@@ -76,6 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Reset Password</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registerstyle.css">
    
    
 </head>
@@ -88,12 +89,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="../html/service.html">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
        </div>
 
 
-<div class="login">
+<div class="register">
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 

@@ -128,10 +128,6 @@ hr {
     background-color: #10eee3af;
 }
 
-.box-purple {
-    background-color: #b279ccd7;
-}
-
 @media screen and (max-width:1200px) {
     .details h2 {
         font-size: 40px;
