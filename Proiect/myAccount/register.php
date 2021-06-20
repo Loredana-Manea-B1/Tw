@@ -128,11 +128,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             </div>
             <ul class="nav-area">
-            <li><a href="../html/front_page.html">Home</a></li>
-                <li><a href="../html/service.html">Services</a></li>
+            <li><a href="../html/front_page.php">Home</a></li>
+                <li><a href="../html/service.php">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
 
@@ -149,22 +149,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
             <label for="usename"><b>Username</b></label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" placeholder="Enter username" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>   
+            </div>  
+
             <div class="form-group">
             <label for="email"><b>Email</b></label>
-                <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                <input type="text" placeholder="Enter email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
                 <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>   
+            </div> 
+            
+            
             <div class="form-group">
             <label for="psw"><b>Password</b></label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <input type="password" placeholder="Enter password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
             <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <input type="password" placeholder="Repet password"name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">

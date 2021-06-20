@@ -2,11 +2,18 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location:../php/courses.php");
+//Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+   header("location:register.php");
     exit;
 }
+
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
+    header("location:../html/service.php");
+     exit;
+ }
+
+
  
 // Include config file
 require_once "config.php";
@@ -106,11 +113,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             </div>
             <ul class="nav-area">
-            <li><a href="../html/front_page.html">Home</a></li>
-                <li><a href="../html/service.html">Services</a></li>
+            <li><a href="../html/front_page.php">Home</a></li>
+                <li><a href="../html/service.php">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
     <div class="login">
@@ -137,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>    
             <div class="form-group">
             <label for="psw"><b>Password</b></label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" placeholder="Enter password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
@@ -147,7 +154,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            
             <div class="container" style="background-color:#f1f1f100">
                 <button type="button" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="resetpass.php">password?</a></span>
                 <span class="psw">Do you wanna <a href="register.php">register?</a></span>
             </div>
 

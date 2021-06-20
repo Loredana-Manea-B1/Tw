@@ -22,11 +22,11 @@ $con = BD::get_con();
                 <img src="../assets/logo.png" alt="">
             </div>
             <ul class="nav-area">
-                <li><a href="../html/front_page.html">Home</a></li>
-                <li><a href="../html/service.html">Services</a></li>
+                <li><a href="../html/front_page.php">Home</a></li>
+                <li><a href="../html/service.php">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
     </header>
@@ -144,7 +144,7 @@ $result = mysqli_query($con, "SELECT * FROM courses");
                 echo '<div class="box box-grey">'.
                 "Title:  " . $row['title'] . "<br />" .'<hr>'.
                 "Description:  " . $row['description'] . "<br />" .'<hr>'.
-                "Icon: " . '<img src="' . $image . '" alt="Random image" />' . //aici trebuie gasita o metoda de a afisa pozele direct din DB, nu cu glob(linia 141)
+                 '<img class="temeplate_imagine" src="' . $image . '" alt="Random image" />' . //aici trebuie gasita o metoda de a afisa pozele direct din DB, nu cu glob(linia 141)
                 '</div>';
 
             }
