@@ -7,6 +7,12 @@ session_start();
 //     header("location: ../myAccount/login.php");
 //     exit;
 // }
+
+
+if((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] )=== false){
+    header("location:../myAccount/login.php");
+    exit;
+}
  
 // Include config file
 require_once "config.php";

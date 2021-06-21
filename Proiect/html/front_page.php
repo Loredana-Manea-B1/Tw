@@ -1,3 +1,9 @@
+<?php
+
+require_once "../myAccount/config.php";
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,6 +12,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+
     <title>SkVi</title>
 </head>
 
@@ -29,10 +36,24 @@
     <div class="welcome-text">
         <h1>
             We are <span>Skill Virtual Instructor</span></h1>
-            <?php
-            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === false) { ?>
-            <a href="../myAccount/register.php">Register</a>
-            <?php } ?>
+           
+
+
+<?php
+
+if((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) === false) 
+{ 
+ 
+    ?>
+    <a href="../myAccount/register.php">Register</a>
+
+
+    <?php
+ }
+?>
+
+
+
         
     </div>
 
