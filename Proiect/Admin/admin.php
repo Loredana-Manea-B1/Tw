@@ -186,6 +186,8 @@
 
 </head>
 <script>
+
+    
     $(document).ready(function() {
         $('.search-box input[type="text"]').on("keyup input", function() {
             /* Get input value on change */
@@ -251,7 +253,7 @@
                     <div class="col-md-12">
                         <div class="mt-5 mb-3 clearfix">
                             <h2 class="pull-left">Accounts Details</h2>
-                            <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Users</a>
+                            <a href="createuser.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Users</a>
                         </div>
                         <?php
                         // Include config file
@@ -285,6 +287,7 @@
                                                 echo '<a href="readusers.php?id='. $row['idAccount'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                                 echo '<a href="updateuser.php?id='. $row['idAccount'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
                                                 echo '<a href="deleteuser.php?id='. $row['idAccount'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                                // echo '<a href="uploadProfileImage.php?id='. $row['idAccount'] .'" title="Upload Image" data-toggle="tooltip"><span class="fa fa-upload"></span></a>';
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -315,15 +318,13 @@
 
 
     <div class="content" id="courses">
-
-
     <div class="wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mt-5 mb-3 clearfix">
                             <h2 class="pull-left">Courses Details</h2>
-                            <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Course</a>
+                            <a href="creatcours.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Course</a>
                         </div>
                         <?php
                         // Include config file
@@ -335,27 +336,28 @@
                                 echo '<table class="table ">';
                                     echo "<thead>";
                                         echo "<tr>";
-                    
                                             echo "<th>#</th>";
-                                            echo "<th>idAccount</th>";
                                             echo "<th>Title</th>";
                                             echo "<th>Description</th>";
-                                            echo "<th>Icon</th>";
+                                            // echo "<th>Icon</th>";
                                         echo "</tr>";
                                     echo "</thead>";
                                     echo "<tbody>";
                                     while($row = mysqli_fetch_array($result)){
                                         echo "<tr>";
                                         echo "<td>" . $row['idCourse'] . "</td>";
-                                        echo "<td>" . $row['idAccount'] . "</td>";
                                         echo "<td>" . $row['title'] . "</td>";
                                         echo "<td>" . $row['description'] . "</td>";
-                                        echo "<td>" . $row['icon'] . "</td>";
-                                       
+                                        // echo  "<td>" .'<img src="data:image/png;base64,'.$row['icon'] . '">'. "</td>";
+                                        // echo "<td>" . $row['icon'] . "</td>";
+                                    //    echo "<td>" .'<img src=' .$row['icon'] .'" width="100px" height="100px" >'. "</td>";
+                                    //     echo "<td>" . '  <img src="icon/<?php echo $rows['icon'];  ' . "</td>";
+                                            
+                                    
                                             echo "<td>";
-                                                echo '<a href="read.php?id='. $row['idCourse'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                                echo '<a href="update.php?id='. $row['idCourse'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
-                                                echo '<a href="delete.php?id='. $row['idCourse'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                                echo '<a href="readcourse.php?id='. $row['idCourse'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                                echo '<a href="updatecourse.php?id='. $row['idCourse'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
+                                                echo '<a href="deletecours.php?id='. $row['idCourse'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -388,7 +390,7 @@
                     <div class="col-md-12">
                         <div class="mt-5 mb-3 clearfix">
                             <h2 class="pull-left">Requests list</h2>
-                            <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Request/Ideea </a>
+                            <a href="createrequest.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Request/Ideea </a>
                         </div>
                         <?php
                         // Include config file
@@ -404,7 +406,7 @@
                                             echo "<th>#</th>";
                                             echo "<th>Title</th>";
                                             echo "<th>Description</th>";
-                                            
+               
                                         echo "</tr>";
                                     echo "</thead>";
                                     echo "<tbody>";
@@ -416,9 +418,9 @@
                                       
                                        
                                             echo "<td>";
-                                                echo '<a href="read.php?id='. $row['idRequest'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                                echo '<a href="update.php?id='. $row['idRequest'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
-                                                echo '<a href="delete.php?id='. $row['idRequest'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                                echo '<a href="readrequest.php?id='. $row['idRequest'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                                echo '<a href="updaterequest.php?id='. $row['idRequest'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
+                                                echo '<a href="deleterequest.php?id='. $row['idRequest'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -442,7 +444,6 @@
         </div>
 
     </div>
-
 
     </div>
 
@@ -469,24 +470,31 @@
                                         echo "<tr>";
                     
                                             echo "<th>#</th>";
-                                            echo "<th>idTutorial</th>";
-                                            echo "<th>Title</th>";
-                                            echo "<th>Description</th>";
+                                            echo "<th>Link</th>";
+                                            echo "<th>Name</th>";
+                                            echo "<th>Category</th>";
+                                            echo "<th>CourseType</th>";
                                             
                                         echo "</tr>";
                                     echo "</thead>";
                                     echo "<tbody>";
                                     while($row = mysqli_fetch_array($result)){
                                         echo "<tr>";
-                                        echo "<td>" . $row['idRequest'] . "</td>";
-                                        echo "<td>" . $row['title'] . "</td>";
-                                        echo "<td>" . $row['text'] . "</td>";
+                                        echo "<td>" . $row['idTutorial'] . "</td>";
+                                        echo "<td>" . $row['link'] . "</td>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['category'] . "</td>";
+                                        echo "<td>" . $row['description'] . "</td>";
+                                        echo "<td>" . $row['courseType'] . "</td>";
+
+                                        
+                                        
                                       
                                        
                                             echo "<td>";
-                                                echo '<a href="read.php?id='. $row['idRequest'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                                echo '<a href="update.php?id='. $row['idRequest'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
-                                                echo '<a href="delete.php?id='. $row['idRequest'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                                echo '<a href="readtutorial.php?id='. $row['idTutorial'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                                echo '<a href="updatetutorial.php?id='. $row['idTutorial'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
+                                                echo '<a href="deletetutorial.php?id='. $row['idTutorial'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -519,8 +527,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mt-5 mb-3 clearfix">
-                            <h2 class="pull-left">Requests tutorials</h2>
-                            <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Tutorial </a>
+                            <h2 class="pull-left">Information</h2>
+                            
                         </div>
                         <?php
                         // Include config file
@@ -532,27 +540,26 @@
                                 echo '<table class="table">';
                                     echo "<thead>";
                                         echo "<tr>";
-                    
                                             echo "<th>#</th>";
-                                            echo "<th>idTutorial</th>";
-                                            echo "<th>Title</th>";
-                                            echo "<th>Description</th>";
+                                            echo "<th>idAccount</th>";
+                                            echo "<th>reactions</th>";
+                                            echo "<th>idTutorials</th>";
                                             
                                         echo "</tr>";
                                     echo "</thead>";
                                     echo "<tbody>";
                                     while($row = mysqli_fetch_array($result)){
                                         echo "<tr>";
-                                        echo "<td>" . $row['idRequest'] . "</td>";
-                                        echo "<td>" . $row['title'] . "</td>";
-                                        echo "<td>" . $row['text'] . "</td>";
+                                        echo "<td>" . "</td>";
+                                        echo "<td>" . $row['idAccount'] . "</td>";
+                                        echo "<td>" . $row['reaction'] . "</td>";
+                                        echo "<td>" . $row['idTutorials'] . "</td>";
                                       
-                                       
-                                            echo "<td>";
-                                                echo '<a href="read.php?id='. $row['idRequest'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                                echo '<a href="update.php?id='. $row['idRequest'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
-                                                echo '<a href="delete.php?id='. $row['idRequest'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-                                            echo "</td>";
+                                            // echo "<td>";
+                                            //     echo '<a href="read.php?id='. $row['idRequest'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                            //     echo '<a href="update.php?id='. $row['idRequest'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pen"></span></a>';
+                                            //     echo '<a href="delete.php?id='. $row['idRequest'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                            // echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</tbody>";                            

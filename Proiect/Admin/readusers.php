@@ -57,11 +57,81 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     <title>View Record</title>
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-        .wrapper{
+                   .wrapper{
             width: 600px;
-            margin: 0 auto;
+            margin: 50px auto;
         }
-        
+        input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px 2px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+/* Set a style for all buttons */
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    float: none;
+}
+
+
+/* Add a hover effect for buttons */
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Extra style for the cancel button (red) */
+
+.cancelbtn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f44336;
+}
+
+
+
+/* The "Forgot password" text */
+
+span.psw {
+    float: inline-start;
+    padding-top: 20px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 1200px) {
+    .login {
+        width: 50%;
+        height: 20vh;
+    }
+    span.psw {
+        display: inline;
+        float: inherit;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+    .wrapper{
+        width: 50%;
+    }
+
+}
     </style>
 </head>
 <body>
@@ -92,7 +162,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <p><b><?php echo $row["isAdmin"]; ?></b></p>
                     </div>
 
-                    <p><a href="../Admin/admin.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="admin.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>

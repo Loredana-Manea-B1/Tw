@@ -4,41 +4,41 @@ require_once "../myAccount/config.php";
     
  
 // Define variables and initialize with empty values
-$username = $email= $password=$isAdmin="";
-$username_err = $email_err = $password_err =$isAdmin_err ="";
+$title = $description= $icon="";
+$title_err = $description_err = $icon_err =$isAdmin_err ="";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
     
-    // Validate username
+    // Validate title
    // Validate name
-   $input_username = trim($_POST["username"]);
-   if(empty($input_username)){
-       $username_err = "Please enter a name.";
-   } elseif(!filter_var($input_username, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-       $username_err = "Please enter a valid name.";
+   $input_title = trim($_POST["title"]);
+   if(empty($input_title)){
+       $title_err = "Please enter title.";
+   } elseif(!filter_var($input_title, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+       $title_err = "Please enter a valid title.";
    } else{
-       $username = $input_username;
+       $title = $input_title;
    }
 
-    // email
+    // description
 
 
 
-    $input_email = trim($_POST["email"]);
-    if(empty($input_email)){
-        $email_err = "Please enter an email.";     
+    $input_description = trim($_POST["description"]);
+    if(empty($input_description)){
+        $description_err = "Please enter an description.";     
     } else{
-        $email = $input_email;
+        $description = $input_description;
     }
 
-    $input_password = trim($_POST["password"]);
-    if(empty($input_password)){
-        $password_err = "Please enter an password.";     
+    $input_icon = trim($_POST["icon"]);
+    if(empty($input_icon)){
+        $icon_err = "Please enter an icon.";     
     } else{
-        $password = $input_password;
+        $icon = $input_icon;
     }
 
 
@@ -58,18 +58,18 @@ if(empty($input_isAdmin)){
 
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($email_err) && empty($password_err)&&empty($isAdmin_err)){
+    if(empty($title_err) && empty($description_err) && empty($icon_err)&&empty($isAdmin_err)){
         // Prepare an update statement
-        $sql = "UPDATE accounts SET username=?, email=?, password=? , isAdmin=?  WHERE idAccount=?";
+        $sql = "UPDATE accounts SET title=?, description=?, icon=? , isAdmin=?  WHERE idAccount=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_email, $param_password,$param_isAdmin, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssssi", $param_title, $param_description, $param_icon,$param_isAdmin, $param_id);
             
             // Set parameters
-            $param_username = $username;
-            $param_email = $email;
-            $param_password = $password;
+            $param_title = $title;
+            $param_description = $description;
+            $param_icon = $icon;
             $param_isAdmin = $isAdmin;
             $param_id = $id;
             
@@ -114,9 +114,9 @@ if(empty($input_isAdmin)){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $username = $row["username"];
-                    $email = $row["email"];
-                    $password = $row["password"];
+                    $title = $row["title"];
+                    $description = $row["description"];
+                    $icon = $row["icon"];
                     $isAdmin = $row["isAdmin"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
@@ -153,7 +153,7 @@ if(empty($input_isAdmin)){
             margin: 50px auto;
         }
         input[type=text],
-input[type=password] {
+input[type=icon] {
     width: 100%;
     padding: 15px 2px;
     margin: 12px 0;
@@ -196,7 +196,7 @@ button:hover {
 
 
 
-/* The "Forgot password" text */
+/* The "Forgot icon" text */
 
 span.psw {
     float: inline-start;
@@ -232,23 +232,23 @@ span.psw {
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-6">Update Record</h2>
-                    <p>Please edit the input values and submit to update the account record.</p>
+                    <p>Please edit the input values and submit to update the employee record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
-                            <label>username</label>
-                            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                            <span class="invalid-feedback"><?php echo $username_err;?></span>
+                            <label>title</label>
+                            <input type="text" name="title" class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $title; ?>">
+                            <span class="invalid-feedback"><?php echo $title_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>email</label>
-                            <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                            <label>description</label>
+                            <input type="text" name="description" class="form-control <?php echo (!empty($description_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $description; ?>">
 
-                            <span class="invalid-feedback"><?php echo $email_err;?></span>
+                            <span class="invalid-feedback"><?php echo $description_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>password</label>
-                            <input type="text" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                            <span class="invalid-feedback"><?php echo $password_err;?></span>
+                            <label>icon</label>
+                            <input type="text" name="icon" class="form-control <?php echo (!empty($icon_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $icon; ?>">
+                            <span class="invalid-feedback"><?php echo $icon_err;?></span>
                         </div>
                         
                         <div class="form-group">

@@ -4,73 +4,51 @@ require_once "../myAccount/config.php";
     
  
 // Define variables and initialize with empty values
-$username = $email= $password=$isAdmin="";
-$username_err = $email_err = $password_err =$isAdmin_err ="";
+$title = $text= "";
+$title_err = $text_err  ="";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
     
-    // Validate username
-   // Validate name
-   $input_username = trim($_POST["username"]);
-   if(empty($input_username)){
-       $username_err = "Please enter a name.";
-   } elseif(!filter_var($input_username, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-       $username_err = "Please enter a valid name.";
-   } else{
-       $username = $input_username;
-   }
-
-    // email
-
-
-
-    $input_email = trim($_POST["email"]);
-    if(empty($input_email)){
-        $email_err = "Please enter an email.";     
+    // Validate title
+    $input_title = trim($_POST["title"]);
+    if(empty($input_title)){
+        $title_err = "Please enter a title.";
+    } elseif(!filter_var($input_title, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $title_err = "Please enter a valid title.";
     } else{
-        $email = $input_email;
+        $title = $input_title;
+    }
+    // text
+
+
+
+    $input_text = ($_POST["text"]);
+    if(empty($input_text)){
+        $text_err = "Please enter an text.";     
+    } else{
+        $text = $input_text;
     }
 
-    $input_password = trim($_POST["password"]);
-    if(empty($input_password)){
-        $password_err = "Please enter an password.";     
-    } else{
-        $password = $input_password;
-    }
-
-
-
-//iAdmin
-$input_isAdmin = trim($_POST["isAdmin"]);
-if(empty($input_isAdmin)){
-    $isAdmin_err = "Please enter the 0 or 1.";     
-} else{
-    $isAdmin = $input_isAdmin;
-}
-
-
-
-
+  
 
 
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($email_err) && empty($password_err)&&empty($isAdmin_err)){
+    if(empty($title_err) && empty($text_err) ){
         // Prepare an update statement
-        $sql = "UPDATE accounts SET username=?, email=?, password=? , isAdmin=?  WHERE idAccount=?";
+        $sql = "UPDATE request SET title=?, text=? WHERE idRequest=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_email, $param_password,$param_isAdmin, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssi", $param_title, $param_text,  $param_id);
             
             // Set parameters
-            $param_username = $username;
-            $param_email = $email;
-            $param_password = $password;
-            $param_isAdmin = $isAdmin;
+            $param_title = $title;
+            $param_text = $text;
+    
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -96,7 +74,7 @@ if(empty($input_isAdmin)){
         $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM accounts WHERE idAccount = ?";
+        $sql = "SELECT * FROM request WHERE idRequest = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
@@ -114,10 +92,9 @@ if(empty($input_isAdmin)){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $username = $row["username"];
-                    $email = $row["email"];
-                    $password = $row["password"];
-                    $isAdmin = $row["isAdmin"];
+                    $title = $row["title"];
+                    $text = $row["text"];
+                   
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location:error.php");
@@ -232,30 +209,20 @@ span.psw {
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-6">Update Record</h2>
-                    <p>Please edit the input values and submit to update the account record.</p>
+                    <p>Please edit the input values and submit to update the request record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
-                            <label>username</label>
-                            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                            <span class="invalid-feedback"><?php echo $username_err;?></span>
+                            <label>title</label>
+                            <input type="text" name="" class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $title; ?>">
+                            <span class="invalid-feedback"><?php echo $title_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>email</label>
-                            <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                            <label>Description</label>
+                            <input type="text" name="text" class="form-control <?php echo (!empty($text_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $text; ?>">
 
-                            <span class="invalid-feedback"><?php echo $email_err;?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>password</label>
-                            <input type="text" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                            <span class="invalid-feedback"><?php echo $password_err;?></span>
+                            <span class="invalid-feedback"><?php echo $text_err;?></span>
                         </div>
                         
-                        <div class="form-group">
-                            <label>IsAdmin</label>
-                            <input type="text" name="isAdmin" class="form-control <?php echo (!empty($isAdmin_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $isAdmin; ?>">
-                            <span class="invalid-feedback"><?php echo $isAdmin_err;?></span>
-                        </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="admin.php" class="btn btn-secondary ml-2">Cancel</a>

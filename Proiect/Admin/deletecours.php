@@ -5,7 +5,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     require_once "../myAccount/config.php";
     
     // Prepare a delete statement
-    $sql = "DELETE FROM accounts WHERE idAccount = ?";
+    $sql = "DELETE FROM courses WHERE idCourse = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -59,7 +59,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Are you sure you want to delete this user</p>
+                            <p>Are you sure you want to delete this course record?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
                                 <a href="admin.php" class="btn btn-secondary">No</a>

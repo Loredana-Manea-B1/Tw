@@ -5,7 +5,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     require_once "../myAccount/config.php";
     
     // Prepare a delete statement
-    $sql = "DELETE FROM accounts WHERE idAccount = ?";
+    $sql = "DELETE FROM request WHERE idRequest = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
