@@ -1,33 +1,11 @@
-< //deci in baza de date mai avem nevoie de un tabel idRequest,username, si request -pentru bagina de request ca sa le folosec eu pe pagina de Request
-
-
-<// trebuie sa aplicam undeva si cumva CRUD  da de asta cred ca ao sa incerc sa ma ocup eu 
-
-
-<//MVC facut
-
-
-<// si trebuei sa facem ceva cu cursurile gen cum vor fi aranjate in pagina etc // munca de front si back e aici
-
-<// ai putea sa iti completezi informatii despre tine pe pagina de about 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Tw
 []//--avem nevoie de o pagina de admin; // adminul va fi singurul ce va vedea partea aia de upload
 
+[]//--o pagina de profil ;
+
 []//=--si o pagina pentru upload tutorial;
+
 []//--- pentru back trebuie sa ne gandim cum tinem track ce tutoriale a urmat fiecare ;
 []//--la cursuri in loc de cadegori o sa avem cursuri , si o sa avem vreo 6 , ma ocup sa le caut si sa vad cum fac pagina pentru fiecare , ca sa le accesezi , utilizatorul 
 va trebui sa fie logat
@@ -43,7 +21,7 @@ va trebui sa fie logat
 
 ////////////////////////////////
 [Pe front-end am facut ]
-[X]//--o pagina de profil ;
+
 [X]login;
 
 [X]main-page;
