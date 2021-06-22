@@ -41,7 +41,7 @@ require_once "../myAccount/config.php";
 
 <?php
 
-if((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) === false) 
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]=== false) 
 { 
  
     ?>
