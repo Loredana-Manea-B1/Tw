@@ -21,7 +21,7 @@
                 <li><a href="../html/service.php">Services</a></li>
                 <li><a href="../php/courses.php">Courses</a></li>
                 <li><a href="../myAccount/login.php">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
     </header>
@@ -35,7 +35,7 @@
                 <h2>Profile</h2>
                 <hr>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda labore.</p>
-                <a href="../myAccount/profilepage.html">See more</a>
+                <a href="../myAccount/profilepage.php">See more</a>
             </div>
 
             <div class="box box-cyan">

@@ -7,6 +7,12 @@ session_start();
 //     header("location: ../myAccount/login.php");
 //     exit;
 // }
+
+
+if((isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] )=== false){
+    header("location:../myAccount/login.php");
+    exit;
+}
  
 // Include config file
 require_once "config.php";
@@ -70,19 +76,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reset Password</title>
+    <title>SkVi</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/registerstyle.css">
-   
-   
 </head>
+
 <body>
-<div class="logo">
+<header>
+        <div class="wrapper">
+            <div class="logo">
                 <img src="../assets/logo.png" alt="">
+
             </div>
             <ul class="nav-area">
             <li><a href="../html/front_page.php">Home</a></li>
@@ -91,29 +101,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="../myAccount/login.php">Login</a></li>
                 <li><a href="../html/about.php">About</a></li>
             </ul>
-       </div>
+        </div>
 
+    </header>
+
+
+       
 
 <div class="register">
+
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
-         <div class="form-group">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
+    <div class="form-group">
             <label for="psw"><b> New Password</b></label>
-                <input type="password" name="new_password" class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
+                <input type="password" placeholder="Enter  new password" name="new_password" class="form-control
+                 <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
                 <span class="invalid-feedback"><?php echo $new_password_err; ?></span>
-            </div>
-            <div class="form-group">
+     </div>
+            
+
+        <div class="form-group">
             <label for="psw-repeat"><b>Confirm Password</b></label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" placeholder="Repet new  password" name="confirm_password" class="form-control 
+                <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
+            
+
+        <div class="form-group">
+            <div class="clearfix">
+                    <button type="submit" class="signupbtn">Submit</button>
+                    
+                </div>
+                <span class="psw">Back to <a href="login.php">login.</a></span>
             </div>
-        </form>
-    
-</div>   
+
+            <!-- <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <a class="btn btn-link ml-2" href="../html/front_page.php">Cancel</a>
+            </div> -->
+            </form>
+    </div>    
 </body>
 </html>

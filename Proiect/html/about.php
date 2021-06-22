@@ -46,7 +46,7 @@
         <p class="title">Student </p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>mloredana056@gmail.com</p>
-        <p><button class="button">Contact</button></p>
+        <p><button class="button" > Contact </button></p>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
       <img  src="../photos/Cristi.jpg" alt="Cristi" style="width:65%"  >
     </div>
       <div class="container">
-        <h2>Pelcea Cristian</h2>
+        <h2>Pelcear Cristian</h2>
         <p class="title">Student</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <p>ceva mail here</p>
