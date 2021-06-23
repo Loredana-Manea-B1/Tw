@@ -5,7 +5,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once "../myAccount/config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM courses WHERE idCourse = ?";
+    $sql = "SELECT * FROM tutorials WHERE idTutorial = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters

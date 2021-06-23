@@ -322,7 +322,7 @@
                     <div class="col-md-12">
                         <div class="mt-5 mb-3 clearfix">
                             <h2 class="pull-left">Courses Details</h2>
-                            <a href="creatcours.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Course</a>
+                            <a href="createcourse.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Course</a>
                         </div>
                         <?php
                         // Include config file
