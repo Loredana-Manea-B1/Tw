@@ -17,11 +17,11 @@
                 <img src="../assets/logo.png" alt="">
             </div>
             <ul class="nav-area">
-                <li><a href="../html/front_page.html">Home</a></li>
-                <li><a href="../html/service.html">Services</a></li>
-                <li><a href="../html/courses.html">Courses</a></li>
-                <li><a href="../myAccount/login.html">Login</a></li>
-                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../html/front_page.php">Home</a></li>
+                <li><a href="../html/service.php">Services</a></li>
+                <li><a href="../php/courses.php">Courses</a></li>
+                <li><a href="../myAccount/login.php">Login</a></li>
+                <li><a href="../html/about.php">About</a></li>
             </ul>
         </div>
     </header>
@@ -34,24 +34,32 @@
                 </div>
                 <h2>Profile</h2>
                 <hr>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda labore.</p>
+                <p></p>
                 <a href="../myAccount/profilepage.html">See more</a>
             </div>
 
             <div class="box box-cyan">
-                <div class="icon">
-                    <i class="fas fa-upload"></i>
-                </div>
-                <h2>Upload tutorial</h2>
-                <hr>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda labore.</p>
-                <a href="#" class="white-border">Upload</a>
+                    <div class="icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h2>Request tutorial</h2>
+                    <hr>
+                    <p>Do you wanna learn a new skill and you don't know where to start , tell us and we will make the best tutorial for you!</p>
+                    <a href="request.php" class="white-border">Request</a>
+             </div>
+
+            <div class="box box-cyan">
+                    <div class="icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h2>Change password</h2>
+                    <hr>
+                    <a href="../myAccount/resetpass.php" class="white-border">Change</a>
             </div>
 
+            
 
-
-
-
+        
         </div>
 
     </div>
